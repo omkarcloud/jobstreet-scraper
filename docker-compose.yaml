@@ -1,0 +1,10 @@
+services:
+  jobstreet-scraper:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      # Optional — JobStreet's and JobsDB's APIs answer plain HTTP, so leave this unset.
+      # - JOBSTREET_PROXY=http://user:pass@host:port
